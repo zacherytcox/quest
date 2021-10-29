@@ -1,0 +1,37 @@
+#OS Configuration Steps:
+
+sudo yum -y update
+sudo yum -y install git
+git clone https://github.com/zacherytcox/quest.git
+curl --silent --location https://rpm.nodesource.com/setup_14.x | sudo bash -
+sudo yum install -y nodejs
+npm install express
+node .
+
+
+#!/bin/bash
+su - username
+cd ~
+sudo yum -y update
+sudo yum -y install git
+git clone https://github.com/zacherytcox/quest.git
+cd quest
+curl --silent --location https://rpm.nodesource.com/setup_14.x | sudo bash -
+sudo yum install -y nodejs
+npm install express
+node .
+
+
+#Part 2, adding docker
+sudo yum install -y docker
+sudo service docker start
+sudo usermod -a -G docker ec2-user
+docker run -it
+
+
+
+
+
+#Process Kill Steps:
+sudo netstat -lpn |grep :'3000'
+kill <> -9
