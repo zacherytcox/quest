@@ -39,7 +39,7 @@ sudo yum install -y docker
 sudo service docker start
 sudo usermod -a -G docker ec2-user
 docker build -t nodeimage1 .
-docker run -it -p 3000:3000 nodeimage1
+docker run -p 3000:3000 nodeimage1
 
 
 #Docker Kill Steps
