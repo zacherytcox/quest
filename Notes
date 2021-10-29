@@ -8,6 +8,10 @@ sudo yum install -y nodejs
 npm install express
 node .
 
+#Process Kill Steps:
+sudo netstat -lpn |grep :'3000'
+kill <> -9
+
 
 #!/bin/bash
 su - username
@@ -23,15 +27,26 @@ node .
 
 
 #Part 2, adding docker
+
+#!/bin/bash
+su - username
+cd ~
+sudo yum -y update
+sudo yum -y install git
+git clone https://github.com/zacherytcox/quest.git
+cd quest
 sudo yum install -y docker
 sudo service docker start
 sudo usermod -a -G docker ec2-user
-docker run -it
+docker build -t nodeimage1 .
+docker run -it -p 3000:3000 nodeimage1
+
+
+#Docker Kill Steps
+docker container ls
+docker container kill
 
 
 
 
 
-#Process Kill Steps:
-sudo netstat -lpn |grep :'3000'
-kill <> -9
