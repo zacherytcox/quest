@@ -14,7 +14,7 @@ kill <> -9
 
 
 #!/bin/bash
-su - username
+su - ec2-user
 cd ~
 sudo yum -y update
 sudo yum -y install git
@@ -29,7 +29,7 @@ node .
 #Part 2, adding docker
 
 #!/bin/bash
-su - username
+su - ec2-user
 cd ~
 sudo yum -y update
 sudo yum -y install git
