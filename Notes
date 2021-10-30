@@ -49,4 +49,9 @@ docker container kill
 
 
 
-
+# Create Certificate
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.key -out certificate.crt
+openssl rsa -in privateKey.key -check
+openssl x509 -in certificate.crt -text -noout
+openssl rsa -in privateKey.key -text > private.pem
+openssl x509 -inform PEM -in certificate.crt > public.pem
